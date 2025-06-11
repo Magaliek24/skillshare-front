@@ -1,0 +1,23 @@
+// Appliquer box-sizing pour une gestion correcte des dimensions pour les formulaires essentiellement
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+body {
+  background: #f5f7fa;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  
+}
+
+H1 {
+    font-size: large;
+    text-align: center;
+    font-weight: 400;
+}

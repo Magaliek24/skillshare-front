@@ -27,20 +27,31 @@
     <!-- style -->
     <link
       rel="stylesheet"
-      href="<%= process.env.SITE_URL %>/assets/styles/styles.css"
-    />
-    <title><%= title || 'Skillshare' %></title>
-    <link
-      rel="stylesheet"
       href="<%= process.env.SITE_URL %>/assets/styles/style.css"
     />
+    <% if (title === 'Inscription') { %>
+    <link
+      rel="stylesheet"
+      href="<%= process.env.SITE_URL %>/assets/styles/form/form.css"
+    />
+    <% } %>
+    <title><%= title || 'Skillshare' %></title>
   </head>
   <body>
     <header><%- include('./components/navbar') %></header>
-    <main><%- include(view) %></main>
+    <main>
+      <h1><%= title %></h1>
+      <%- include(view) %>
+    </main>
     <script
       type="module"
       src="<%= process.env.SITE_URL %>/assets/js/navbar.js"
     ></script>
+    <% if (title === 'Inscription') { %>
+    <script
+      type="module"
+      src="<%= process.env.SITE_URL %>/assets/js/register.js"
+    ></script>
+    <% } %>
   </body>
 </html>
